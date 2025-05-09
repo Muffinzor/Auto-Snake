@@ -13,6 +13,7 @@ public:
     }
 
     void print_board() const;
+    void print_status() const;
 };
 
 

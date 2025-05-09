@@ -1,12 +1,6 @@
 #include "RandomGen.h"
 #include <random>
 
-int RandomGen::randomInt(const int min, const int max) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(min, max);
-    return dist(gen);
-}
 double RandomGen::randomDouble(const double min, const double max) {
     std::random_device rd;
     std::mt19937 gen(rd());

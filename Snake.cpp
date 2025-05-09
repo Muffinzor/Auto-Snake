@@ -42,6 +42,7 @@ void Snake::move() {
         chance_to_turn = 0.1;
     } else if (collides_in_direction(direction)) {
         body_positions.pop_back();
+        eating_itself = true;
         length--;
         return;
     } else {
@@ -71,6 +72,7 @@ void Snake::move() {
         body_positions.pop_back();
     }
     growth_counter++;
+    eating_itself = false;
     if (growth_counter == 20) {
         length++;
         growth_counter = 0;
