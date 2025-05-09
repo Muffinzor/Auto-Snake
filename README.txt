@@ -1,6 +1,6 @@
 Description:
-    Just a snake randomly moving around and growing.
-    It will eat itself if stuck, until it can move again.
+   	Just a snake randomly moving around and growing.
+    	It will eat itself if stuck, until it can move again.
 
 Requirements:
 	g++ compiler
