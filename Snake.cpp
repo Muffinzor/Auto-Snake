@@ -82,10 +82,12 @@ bool Snake::can_turn() {
     switch (direction) {
         case 0:
         case 2:
-            if (collides_in_direction(1) && collides_in_direction(3)) can_turn = false; break;
+            if (collides_in_direction(1) && collides_in_direction(3)) can_turn = false;
+            break;
         case 1:
         case 3:
-            if (collides_in_direction(0) && collides_in_direction(2)) can_turn = false; break;
+            if (collides_in_direction(0) && collides_in_direction(2)) can_turn = false;
+            break;
     }
     return can_turn;
 }
@@ -134,7 +136,7 @@ bool Snake::collides_in_direction(int dir) const {
         return true;
         }
 
-    for (int i = 0; i < body_positions.size(); ++i) {
+    for (unsigned int i = 0; i < body_positions.size(); ++i) {
         if (body_positions[i].first == head_x && body_positions[i].second == head_y) {
             return true;
         }

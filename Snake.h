@@ -7,7 +7,7 @@ using namespace std;
 
 class Snake {
 public:
-    int length;
+    unsigned int length;
     int board_dimension;
     vector<pair<int, int>> body_positions;
     int direction; // 0 = north, 1 = east, 2 = south, 3 = west

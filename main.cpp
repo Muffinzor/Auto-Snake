@@ -1,16 +1,12 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <windows.h>
+//#include <windows.h>
 #include "Snake.h"
 #include "Board.h"
 
-void hideCursor() {
-    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_CURSOR_INFO cursorInfo;
-    GetConsoleCursorInfo(out, &cursorInfo);
-    cursorInfo.bVisible = FALSE;
-    SetConsoleCursorInfo(out, &cursorInfo);
+void clearScreen() {
+    std::cout << "\033[2J\033[H" << std::flush;
 }
 
 int main() {
@@ -18,9 +14,8 @@ int main() {
     int snake_size = 5;
     Snake snake(snake_size, board_size);
     Board B(board_size, &snake);
-    hideCursor();
     while (true) {
-        system("cls");
+        clearScreen();
         snake.move();
         B.print_board();
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
